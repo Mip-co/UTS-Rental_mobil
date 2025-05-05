@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Bulan Mei 2025 pada 16.18
+-- Waktu pembuatan: 05 Bulan Mei 2025 pada 16.19
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -70,7 +70,7 @@ INSERT INTO `paramedik` (`id`, `nama`, `gender`, `tmp_lahir`, `tgl_lahir`, `kate
 (1, 'Dr. Asep Daging', 'L', 'Bandung', '1988-06-28', 'dokter', '081234560001', 'Jl. Sudirman No. 15', 1),
 (2, 'Citra Cemungudh', 'P', 'Bogor', '1990-08-12', 'perawat', '081234567801', 'Jl. Kartini No. 8', 2),
 (3, 'Didi Dikit ', 'L', 'Bekasi', '1988-03-05', 'apoteker', '081234567802', 'Jl. Ahmad Yani No. 20', 5),
-(4, 'Nenen Emel', 'P', 'Depok', '1992-11-25', 'perawat', '081234567803', 'Jl. Pemuda No. 30', 2),
+(4, 'Nana', 'P', 'Depok', '1992-11-25', 'perawat', '081234567803', 'Jl. Pemuda No. 30', 2),
 (5, 'Dr. Seno Ultra', 'L', 'Bandung', '1987-02-15', 'dokter', '081234567804', 'Jl. Melati No. 11', 1),
 (7, ' Rina Receh', 'P', 'Surabaya', '1995-02-17', 'perawat', '081234567805', 'Jl. Energi No. 5', 2);
 
