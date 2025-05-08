@@ -7,7 +7,6 @@ if (isset($_GET['url'])) {
     header("Location: ?url=periksa");
     exit();
 }
-
 $title = strtoupper($file);
 $home = new Page("$title", "$file");
 $home->call();
