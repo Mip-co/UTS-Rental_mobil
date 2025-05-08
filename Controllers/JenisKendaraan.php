@@ -1,7 +1,7 @@
 <?php
 require_once 'Config/DB.php';
 
-class Kelurahan
+class JenisKendaraan
 {
     private $pdo;
 
@@ -12,43 +12,44 @@ class Kelurahan
 
     public function index()
     {
-        $stmt = $this->pdo->query("SELECT * FROM kelurahan");
+        $stmt = $this->pdo->query("SELECT * FROM jenis_kendaraan");
         $data = $stmt->fetchAll();
         return $data;
     }
 
     public function show($id)
     {
-        $stmt = $this->pdo->query("SELECT * FROM kelurahan WHERE id=$id");
+        $stmt = $this->pdo->query("SELECT * FROM jenis_kendaraan WHERE id=$id");
         $data = $stmt->fetch();
         return $data;
     }
 
     public function create($data)
     {
-        $sql = "INSERT INTO kelurahan (id, nama, kec_id) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO jenis_kendaraan (nama) VALUES (?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$data['id'], $data['nama'], $data['kec_id']]);
+        $stmt->execute([$data['nama']]);
         return $this->pdo->lastInsertId();
     }
 
-    public function update($id, $data) {
-        $sql = "UPDATE kelurahan SET nama=:nama, kec_id=:kec_id WHERE id=:id";
+    public function update($id, $data)
+    {
+        $sql = "UPDATE jenis_kendaraan SET nama=:nama WHERE id=:id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':nama', $data['nama']);
-        $stmt->bindParam(':kec_id', $data['kec_id']);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         return $this->show($id);
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $row = $this->show($id);
-        $sql = "DELETE FROM kelurahan WHERE id=?";
+        $sql = "DELETE FROM jenis_kendaraan WHERE id=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$id]);
         return $row;
     }
 }
 
-$kelurahan = new Kelurahan($pdo);
+$jeniskendaraan = new JenisKendaraan($pdo);
